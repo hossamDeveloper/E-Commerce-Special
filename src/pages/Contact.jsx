@@ -131,11 +131,11 @@ const Contact = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white dark:bg-gray-900">
+      <div className="min-h-screen bg-white ">
         <div className="w-full">
           {/* Simplified loading skeleton */}
           <div className="mb-8">
-            <div className="h-8 w-48 bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
+            <div className="h-8 w-48 bg-gray-200  rounded animate-pulse"></div>
           </div>
 
           {/* Hero Section Skeleton */}
@@ -152,10 +152,10 @@ const Contact = () => {
               <div className="max-w-6xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                   {[...Array(4)].map((_, index) => (
-                    <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
-                      <div className="bg-gray-200 dark:bg-gray-700 p-3 rounded-full w-14 h-14 mb-4 animate-pulse"></div>
-                      <div className="h-6 w-32 bg-gray-200 dark:bg-gray-700 rounded animate-pulse mb-2"></div>
-                      <div className="h-4 w-full bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
+                    <div key={index} className="bg-white  p-6 rounded-xl shadow-md">
+                      <div className="bg-gray-200  p-3 rounded-full w-14 h-14 mb-4 animate-pulse"></div>
+                      <div className="h-6 w-32 bg-gray-200  rounded animate-pulse mb-2"></div>
+                      <div className="h-4 w-full bg-gray-200  rounded animate-pulse"></div>
                     </div>
                   ))}
                 </div>
@@ -164,24 +164,24 @@ const Contact = () => {
           </section>
 
           {/* Contact Form Section Skeleton */}
-          <section className="py-16 bg-gray-50 dark:bg-gray-800">
+          <section className="py-16 bg-gray-50 ">
             <div className="px-6">
               <div className="max-w-6xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                   <div className="space-y-8">
                     <div>
-                      <div className="h-8 w-48 bg-gray-200 dark:bg-gray-700 rounded animate-pulse mb-4"></div>
-                      <div className="h-4 w-full bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
+                      <div className="h-8 w-48 bg-gray-200  rounded animate-pulse mb-4"></div>
+                      <div className="h-4 w-full bg-gray-200  rounded animate-pulse"></div>
                     </div>
                     <div className="space-y-4">
                       {[...Array(3)].map((_, index) => (
-                        <div key={index} className="h-12 bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
+                        <div key={index} className="h-12 bg-gray-200  rounded animate-pulse"></div>
                       ))}
                     </div>
-                    <div className="h-32 bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
-                    <div className="h-12 w-48 bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
+                    <div className="h-32 bg-gray-200  rounded animate-pulse"></div>
+                    <div className="h-12 w-48 bg-gray-200  rounded animate-pulse"></div>
                   </div>
-                  <div className="h-96 bg-gray-200 dark:bg-gray-700 rounded-xl animate-pulse"></div>
+                  <div className="h-96 bg-gray-200  rounded-xl animate-pulse"></div>
                 </div>
               </div>
             </div>
@@ -192,12 +192,12 @@ const Contact = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen bg-white ">
       <div className="w-full  ">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{translations.contactUs}</h1>
-          <p className="text-gray-600 dark:text-gray-300">{translations.contactDescription}</p>
+          <h1 className="text-3xl font-bold text-gray-900 ">{translations.contactUs}</h1>
+          <p className="text-gray-600 ">{translations.contactDescription}</p>
         </div>
 
         {/* Hero Section */}

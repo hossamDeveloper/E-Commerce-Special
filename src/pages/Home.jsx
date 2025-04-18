@@ -262,7 +262,7 @@ const Home = () => {
       </motion.section>
 
       {/* Features Section */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900">
+      <section className="py-16 bg-gray-50">
         <div className="w-full px-6">
           <motion.div 
             className="text-center mb-8 sm:mb-12"
@@ -283,58 +283,58 @@ const Home = () => {
             viewport={{ once: true }}
           >
             <motion.div 
-              className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow"
+              className="bg-white p-4 sm:p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow"
               variants={fadeIn}
               whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
             >
-              <div className="bg-blue-100 dark:bg-blue-900 p-2.5 sm:p-3 rounded-full w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center mb-3 sm:mb-4">
-                <Truck className="w-6 h-6 sm:w-7 sm:h-7 text-blue-600 dark:text-blue-400" />
+              <div className="bg-blue-100 p-2.5 sm:p-3 rounded-full w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center mb-3 sm:mb-4">
+                <Truck className="w-6 h-6 sm:w-7 sm:h-7 text-blue-600" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-900 dark:text-white">{translations.feature1}</h3>
-              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">{translations.feature1Desc}</p>
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-900">{translations.feature1}</h3>
+              <p className="text-sm sm:text-base text-gray-600">{translations.feature1Desc}</p>
             </motion.div>
 
             <motion.div 
-              className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow"
+              className="bg-white p-4 sm:p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow"
               variants={fadeIn}
               whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
             >
-              <div className="bg-green-100 dark:bg-green-900 p-2.5 sm:p-3 rounded-full w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center mb-3 sm:mb-4">
-                <Shield className="w-6 h-6 sm:w-7 sm:h-7 text-green-600 dark:text-green-400" />
+              <div className="bg-green-100 p-2.5 sm:p-3 rounded-full w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center mb-3 sm:mb-4">
+                <Shield className="w-6 h-6 sm:w-7 sm:h-7 text-green-600" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-900 dark:text-white">{translations.feature2}</h3>
-              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">{translations.feature2Desc}</p>
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-900">{translations.feature2}</h3>
+              <p className="text-sm sm:text-base text-gray-600">{translations.feature2Desc}</p>
             </motion.div>
 
             <motion.div 
-              className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow"
+              className="bg-white p-4 sm:p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow"
               variants={fadeIn}
               whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
             >
-              <div className="bg-purple-100 dark:bg-purple-900 p-2.5 sm:p-3 rounded-full w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center mb-3 sm:mb-4">
-                <Headphones className="w-6 h-6 sm:w-7 sm:h-7 text-purple-600 dark:text-purple-400" />
+              <div className="bg-purple-100 p-2.5 sm:p-3 rounded-full w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center mb-3 sm:mb-4">
+                <Headphones className="w-6 h-6 sm:w-7 sm:h-7 text-purple-600" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-900 dark:text-white">{translations.feature3}</h3>
-              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">{translations.feature3Desc}</p>
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-900">{translations.feature3}</h3>
+              <p className="text-sm sm:text-base text-gray-600">{translations.feature3Desc}</p>
             </motion.div>
 
             <motion.div 
-              className="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow"
+              className="bg-white p-4 sm:p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow"
               variants={fadeIn}
               whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
             >
-              <div className="bg-red-100 dark:bg-red-900 p-2.5 sm:p-3 rounded-full w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center mb-3 sm:mb-4">
-                <RefreshCw className="w-6 h-6 sm:w-7 sm:h-7 text-red-600 dark:text-red-400" />
+              <div className="bg-red-100 p-2.5 sm:p-3 rounded-full w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center mb-3 sm:mb-4">
+                <RefreshCw className="w-6 h-6 sm:w-7 sm:h-7 text-red-600" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-900 dark:text-white">{translations.feature4}</h3>
-              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300">{translations.feature4Desc}</p>
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-900">{translations.feature4}</h3>
+              <p className="text-sm sm:text-base text-gray-600">{translations.feature4Desc}</p>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Featured Products Section */}
-      <section className="py-12 bg-gray-50 dark:bg-gray-900">
+      <section className="py-12 bg-gray-50">
         <div className="w-full px-6">
           <motion.div 
             className="flex flex-col sm:flex-row justify-between items-center mb-8"
@@ -343,8 +343,8 @@ const Home = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-0">{translations.featuredProducts}</h2>
-            <Link to="/products" className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium flex items-center gap-1">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-0">{translations.featuredProducts}</h2>
+            <Link to="/products" className="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1">
               {translations.viewAll}
               <ArrowRight className={`w-4 h-4 ${language === 'ar' ? 'rotate-180' : ''}`} />
             </Link>
@@ -360,10 +360,10 @@ const Home = () => {
             {loading ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {[...Array(6)].map((_, index) => (
-                  <div key={index} className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-4 animate-pulse">
-                    <div className="w-full h-48 bg-gray-200 dark:bg-gray-700 rounded-lg mb-4"></div>
-                    <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-3/4 mb-2"></div>
-                    <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/2"></div>
+                  <div key={index} className="bg-white rounded-xl shadow-md p-4 animate-pulse">
+                    <div className="w-full h-48 bg-gray-200 rounded-lg mb-4"></div>
+                    <div className="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
+                    <div className="h-4 bg-gray-200 rounded w-1/2"></div>
                   </div>
                 ))}
               </div>

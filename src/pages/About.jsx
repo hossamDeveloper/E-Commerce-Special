@@ -32,11 +32,11 @@ const About = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white dark:bg-gray-900">
+      <div className="min-h-screen bg-white">
         <div className="w-full">
           {/* Simplified loading skeleton */}
           <div className="mb-8">
-            <div className="h-8 w-48 bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
+            <div className="h-8 w-48 bg-gray-200 rounded animate-pulse"></div>
           </div>
 
           {/* Hero Section Skeleton */}
@@ -51,8 +51,8 @@ const About = () => {
           <section className="py-16">
             <div className="px-6">
               <div className="max-w-3xl mx-auto text-center mb-16">
-                <div className="h-8 w-64 mx-auto bg-gray-200 dark:bg-gray-700 rounded animate-pulse mb-4"></div>
-                <div className="h-4 w-3/4 mx-auto bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
+                <div className="h-8 w-64 mx-auto bg-gray-200 rounded animate-pulse mb-4"></div>
+                <div className="h-4 w-3/4 mx-auto bg-gray-200 rounded animate-pulse"></div>
               </div>
             </div>
           </section>
@@ -62,11 +62,11 @@ const About = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
-      <div className="w-full ">
+    <div className="min-h-screen bg-white">
+      <div className="w-full">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">
             {translations.aboutUs}
           </h1>
         </div>

@@ -22,7 +22,7 @@ export default function App() {
       <PersistGate loading={null} persistor={persistor}>
         <LanguageProvider>
           <Router>
-            <div className="min-h-screen bg-white text-gray-900">
+            <div className="min-h-screen bg-white">
               <Navbar />
               <div className="container mx-auto px-2 sm:px-4 lg:px-8">
                 <Routes>

@@ -228,143 +228,116 @@ const ProductDetails = memo(() => {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-8">
-        {/* Product Details */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Product Images */}
-          <div className="relative">
-            <motion.div
-              className="aspect-square rounded-xl overflow-hidden bg-white shadow-md"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <MemoizedProductImage
-                src={product.image}
-                alt={language === "ar" ? product.nameAr : product.name}
-              />
-            </motion.div>
-          </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="bg-white rounded-xl shadow-md overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
+              {/* Product Image */}
+              <div className="relative">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-96 object-contain rounded-lg"
+                />
+                <button
+                  onClick={() => toggleFavorite()}
+                  className={`absolute top-4 right-4 p-2 rounded-full ${
+                    isFavorite
+                      ? 'bg-red-100 text-red-500'
+                      : 'bg-gray-100 text-gray-500'
+                  } hover:scale-110 transition-transform`}
+                >
+                  <Heart
+                    className={`w-6 h-6 ${isFavorite ? 'fill-current' : ''}`}
+                  />
+                </button>
+              </div>
 
-          {/* Product Info */}
-          <motion.div
-            className="space-y-6 bg-white p-6 rounded-xl shadow-md"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <div className="space-y-4">
-              <div>
-                <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
-                  {language === "ar" ? product.nameAr : product.name}
-                </h1>
-                <div className="flex items-center mt-2">
-                  <Star className="w-5 h-5 text-yellow-400 fill-current" />
-                  <span className="text-gray-600 dark:text-gray-300 ml-2">
-                    {product.rating}
+              {/* Product Info */}
+              <div className="space-y-6">
+                <div>
+                  <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
+                    {product.name}
+                  </h1>
+                  <p className="mt-2 text-gray-600">{product.description}</p>
+                </div>
+
+                <div className="flex items-center space-x-2">
+                  <div className="flex items-center">
+                    {[...Array(5)].map((_, index) => (
+                      <Star
+                        key={index}
+                        className={`w-5 h-5 ${
+                          index < Math.floor(product.rating)
+                            ? 'text-yellow-400 fill-current'
+                            : 'text-gray-300'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                  <span className="text-gray-600">
+                    ({product.rating} {translations.rating})
                   </span>
                 </div>
-              </div>
 
-              <div className="flex items-center gap-4">
-                <div className="flex flex-col">
-                  <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                <div>
+                  <span className="text-3xl font-bold text-gray-900">
                     ${product.price}
+                  </span>
+                </div>
+
+                <div className="flex items-center space-x-4">
+                  <div className="flex items-center border border-gray-300 rounded-lg">
+                    <button
+                      onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                      className="p-2 text-gray-600 hover:text-gray-900"
+                    >
+                      <Minus className="w-5 h-5" />
+                    </button>
+                    <span className="px-4 py-2 text-gray-900">{quantity}</span>
+                    <button
+                      onClick={() => setQuantity(quantity + 1)}
+                      className="p-2 text-gray-600 hover:text-gray-900"
+                    >
+                      <Plus className="w-5 h-5" />
+                    </button>
                   </div>
-                  {product.discountPercentage > 0 && (
-                    <div className="flex items-center gap-2">
-                      <div className="text-sm text-gray-500 line-through">
-                        ${(product.price * (1 + product.discountPercentage / 100)).toFixed(2)}
-                      </div>
-                      <div className="text-sm bg-red-500 text-white px-2 py-1 rounded">
-                        -{product.discountPercentage}%
-                      </div>
-                    </div>
-                  )}
+                  <button
+                    onClick={() => handleAddToCart()}
+                    className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2"
+                  >
+                    <ShoppingCart className="w-5 h-5" />
+                    <span>{translations.addToCart}</span>
+                  </button>
+                </div>
+
+                {/* Product Features */}
+                <div className="grid grid-cols-2 gap-4 pt-4">
+                  <div className="flex items-center gap-2">
+                    <Package className="w-5 h-5 text-gray-500" />
+                    <span className="text-gray-600">{translations.freeShipping}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Truck className="w-5 h-5 text-gray-500" />
+                    <span className="text-gray-600">{translations.fastDelivery}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Shield className="w-5 h-5 text-gray-500" />
+                    <span className="text-gray-600">{translations.securePayment}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <RefreshCw className="w-5 h-5 text-gray-500" />
+                    <span className="text-gray-600">{translations.easyReturns}</span>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <div className="border-t border-gray-200 pt-4">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{translations.description}</h3>
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                {getDetailedDescription()}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4 pt-4">
-              <div className="flex items-center gap-2">
-                <Package className="w-5 h-5 text-gray-500" />
-                <span className="text-gray-600">{translations.freeShipping}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Truck className="w-5 h-5 text-gray-500" />
-                <span className="text-gray-600">{translations.fastDelivery}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Shield className="w-5 h-5 text-gray-500" />
-                <span className="text-gray-600">{translations.securePayment}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <RefreshCw className="w-5 h-5 text-gray-500" />
-                <span className="text-gray-600">{translations.easyReturns}</span>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4 pt-6">
-              <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden">
-                <button
-                  onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="p-2 hover:bg-gray-100 transition-colors"
-                >
-                  <Minus className="w-4 h-4 text-gray-600" />
-                </button>
-                <span className="px-4 py-2 border-x border-gray-300">{quantity}</span>
-                <button
-                  onClick={() => setQuantity(quantity + 1)}
-                  className="p-2 hover:bg-gray-100 transition-colors"
-                >
-                  <Plus className="w-4 h-4 text-gray-600" />
-                </button>
-              </div>
-
-              <motion.button
-                onClick={() => toggleFavorite()}
-                className="p-3 rounded-full hover:bg-gray-100 transition-colors"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Heart
-                  className={`w-6 h-6 ${
-                    isFavorite ? "text-red-500 fill-current" : "text-gray-600"
-                  }`}
-                />
-              </motion.button>
-              <motion.button
-                onClick={() => setShowShareOptions(!showShareOptions)}
-                className="p-3 rounded-full hover:bg-gray-100 transition-colors"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-              >
-                <Share2 className="w-6 h-6 text-gray-600" />
-              </motion.button>
-              <motion.button
-                onClick={() => handleAddToCart()}
-                className="flex-1 bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                disabled={!product || !product.inStock}
-              >
-                <ShoppingCart className="w-5 h-5" />
-                {product?.inStock ? translations.addToCart : translations.outOfStock}
-              </motion.button>
-            </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Related Products */}
         {relatedProducts.length > 0 && (
           <div className="mt-16">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-8">
               {translations.relatedProducts}
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, memo, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'framer-motion';
 import { Heart } from 'lucide-react';
@@ -56,61 +56,44 @@ const Favorites = memo(() => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
 
-  if (loading || productsLoading) {
+  if (loading) {
     return (
       <div className="min-h-screen bg-gray-50">
         <div className="container mx-auto px-4 py-8">
-          {/* Header Skeleton */}
-          <div className="mb-8">
+          <div className="bg-gray-100 p-8 rounded-xl shadow-md max-w-md mx-auto">
             <div className="animate-pulse">
-              <div className="h-8 w-32 bg-gray-200 rounded"></div>
-              <div className="mt-2 h-4 w-64 bg-gray-200 rounded"></div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                {translations.loading}
+              </h2>
+              <p className="text-gray-600 mb-6">
+                {translations.pleaseWait}
+              </p>
             </div>
-          </div>
-
-          {/* Products Grid Skeleton */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {Array(8).fill(0).map((_, index) => (
-              <div key={index} className="animate-pulse">
-                <div className="bg-gray-200 rounded-lg h-48"></div>
-                <div className="mt-4 space-y-2">
-                  <div className="bg-gray-200 h-4 w-3/4 rounded"></div>
-                  <div className="bg-gray-200 h-4 w-1/2 rounded"></div>
-                  <div className="bg-gray-200 h-4 w-1/4 rounded"></div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>
     );
   }
 
-  if (favoriteProducts.length === 0) {
+  if (favorites.length === 0) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center p-4">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn}
-          className="text-center"
-        >
-          <div className="bg-gray-100 dark:bg-gray-800 p-8 rounded-xl shadow-md max-w-md mx-auto">
-            <Heart className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+      <div className="min-h-screen bg-gray-50">
+        <div className="container mx-auto px-4 py-8">
+          <div className="text-center">
+            <h1 className="text-3xl font-bold text-gray-900">
               {translations.noFavorites}
-            </h2>
-            <p className="text-gray-600 dark:text-gray-300 mb-6">
-              {translations.noFavoritesDescription}
+            </h1>
+            <p className="text-gray-600 mt-2">
+              {translations.startBrowsing}
             </p>
-            <button
-              onClick={() => navigate('/products')}
-              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            <Link
+              to="/products"
+              className="inline-block mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
             >
               {translations.browseProducts}
-            </button>
+            </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
     );
   }
@@ -120,10 +103,10 @@ const Favorites = memo(() => {
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-800 dark:text-white">
+          <h1 className="text-3xl font-bold text-gray-900">
             {translations.favorites}
           </h1>
-          <p className="text-gray-600 dark:text-gray-300 mt-2">
+          <p className="text-gray-600 mt-2">
             {translations.favoritesDescription}
           </p>
         </div>

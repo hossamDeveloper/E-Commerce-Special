@@ -66,9 +66,9 @@ const Checkout = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
+    <div className="min-h-screen bg-gray-50 py-12">
       <div className="container mx-auto px-4">
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+        <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">
           {translations.checkoutTitle}
         </h1>
 
@@ -82,7 +82,7 @@ const Checkout = () => {
               </div>
               <span className="ml-2 text-sm sm:text-base">{translations.shippingInfo}</span>
             </div>
-            <div className="hidden sm:block w-16 h-1 bg-gray-200 dark:bg-gray-700"></div>
+            <div className="hidden sm:block w-16 h-1 bg-gray-200"></div>
             <div className={`flex items-center ${step >= 2 ? 'text-blue-600' : 'text-gray-400'}`}>
               <div className={`w-8 h-8 rounded-full flex items-center justify-center border-2 
                 ${step >= 2 ? 'border-blue-600 bg-blue-600 text-white' : 'border-gray-400'}`}>
@@ -90,7 +90,7 @@ const Checkout = () => {
               </div>
               <span className="ml-2 text-sm sm:text-base">{translations.paymentInfo}</span>
             </div>
-            <div className="hidden sm:block w-16 h-1 bg-gray-200 dark:bg-gray-700"></div>
+            <div className="hidden sm:block w-16 h-1 bg-gray-200"></div>
             <div className={`flex items-center ${step >= 3 ? 'text-blue-600' : 'text-gray-400'}`}>
               <div className={`w-8 h-8 rounded-full flex items-center justify-center border-2 
                 ${step >= 3 ? 'border-blue-600 bg-blue-600 text-white' : 'border-gray-400'}`}>
@@ -108,9 +108,9 @@ const Checkout = () => {
               initial="hidden"
               animate="visible"
               variants={fadeIn}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-4 sm:p-6 mb-6"
+              className="bg-white rounded-xl shadow-md p-4 sm:p-6 mb-6"
             >
-              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
                 {step === 1 && translations.shippingInfo}
                 {step === 2 && translations.paymentInfo}
                 {step === 3 && translations.orderSummary}
@@ -121,68 +121,68 @@ const Checkout = () => {
                   <div className="space-y-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-2">
+                        <label className="block text-sm sm:text-base text-gray-700 mb-2">
                           {translations.firstName}
                         </label>
                         <input
                           type="text"
-                          className="w-full px-3 sm:px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                          className="w-full px-3 sm:px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-2">
+                        <label className="block text-sm sm:text-base text-gray-700 mb-2">
                           {translations.lastName}
                         </label>
                         <input
                           type="text"
-                          className="w-full px-3 sm:px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                          className="w-full px-3 sm:px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                         />
                       </div>
                     </div>
                     <div>
-                      <label className="block text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-2">
+                      <label className="block text-sm sm:text-base text-gray-700 mb-2">
                         {translations.email}
                       </label>
                       <input
                         type="email"
-                        className="w-full px-3 sm:px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                        className="w-full px-3 sm:px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-2">
+                      <label className="block text-sm sm:text-base text-gray-700 mb-2">
                         {translations.address}
                       </label>
                       <input
                         type="text"
-                        className="w-full px-3 sm:px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                        className="w-full px-3 sm:px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                       />
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       <div>
-                        <label className="block text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-2">
+                        <label className="block text-sm sm:text-base text-gray-700 mb-2">
                           {translations.city}
                         </label>
                         <input
                           type="text"
-                          className="w-full px-3 sm:px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                          className="w-full px-3 sm:px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-2">
+                        <label className="block text-sm sm:text-base text-gray-700 mb-2">
                           {translations.country}
                         </label>
                         <input
                           type="text"
-                          className="w-full px-3 sm:px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                          className="w-full px-3 sm:px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-2">
+                        <label className="block text-sm sm:text-base text-gray-700 mb-2">
                           {translations.postalCode}
                         </label>
                         <input
                           type="text"
-                          className="w-full px-3 sm:px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                          className="w-full px-3 sm:px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                         />
                       </div>
                     </div>
@@ -192,45 +192,45 @@ const Checkout = () => {
                 {step === 2 && (
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-2">
+                      <label className="block text-sm sm:text-base text-gray-700 mb-2">
                         {translations.cardNumber}
                       </label>
                       <div className="relative">
                         <input
                           type="text"
-                          className="w-full px-3 sm:px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base pl-10 sm:pl-12"
+                          className="w-full px-3 sm:px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base pl-10 sm:pl-12"
                         />
                         <CreditCard className="absolute left-3 sm:left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4 sm:w-5 sm:h-5" />
                       </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-2">
+                        <label className="block text-sm sm:text-base text-gray-700 mb-2">
                           {translations.expiryDate}
                         </label>
                         <input
                           type="text"
                           placeholder="MM/YY"
-                          className="w-full px-3 sm:px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                          className="w-full px-3 sm:px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-2">
+                        <label className="block text-sm sm:text-base text-gray-700 mb-2">
                           {translations.cvv}
                         </label>
                         <input
                           type="text"
-                          className="w-full px-3 sm:px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                          className="w-full px-3 sm:px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                         />
                       </div>
                     </div>
                     <div>
-                      <label className="block text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-2">
+                      <label className="block text-sm sm:text-base text-gray-700 mb-2">
                         {translations.nameOnCard}
                       </label>
                       <input
                         type="text"
-                        className="w-full px-3 sm:px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
+                        className="w-full px-3 sm:px-4 py-2 rounded-lg border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
                       />
                     </div>
                   </div>
@@ -238,8 +238,8 @@ const Checkout = () => {
 
                 {step === 3 && (
                   <div className="space-y-6">
-                    <div className="border-b border-gray-200 dark:border-gray-700 pb-4">
-                      <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                    <div className="border-b border-gray-200 pb-4">
+                      <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-4">
                         {translations.orderSummary}
                       </h3>
                       <div className="space-y-4">
@@ -252,30 +252,30 @@ const Checkout = () => {
                                 className="w-12 h-12 sm:w-16 sm:h-16 object-cover rounded-lg"
                               />
                               <div className="ml-3 sm:ml-4">
-                                <h4 className="text-sm sm:text-base text-gray-900 dark:text-white font-medium">
+                                <h4 className="text-sm sm:text-base text-gray-900 font-medium">
                                   {item.name}
                                 </h4>
-                                <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+                                <p className="text-xs sm:text-sm text-gray-500">
                                   {translations.quantity}: {item.quantity}
                                 </p>
                               </div>
                             </div>
-                            <span className="text-sm sm:text-base text-gray-900 dark:text-white font-medium">
+                            <span className="text-sm sm:text-base text-gray-900 font-medium">
                               ${(item.price * item.quantity).toFixed(2)}
                             </span>
                           </div>
                         ))}
                       </div>
                       <div className="space-y-2">
-                        <div className="flex justify-between text-sm sm:text-base text-gray-600 dark:text-gray-300">
+                        <div className="flex justify-between text-sm text-gray-600">
                           <span>{translations.subtotal}</span>
                           <span>${subtotal.toFixed(2)}</span>
                         </div>
-                        <div className="flex justify-between text-sm sm:text-base text-gray-600 dark:text-gray-300">
+                        <div className="flex justify-between text-sm text-gray-600">
                           <span>{translations.shipping}</span>
                           <span>{translations.free}</span>
                         </div>
-                        <div className="flex justify-between text-base sm:text-lg text-gray-900 dark:text-white font-bold">
+                        <div className="flex justify-between text-base font-semibold text-gray-900">
                           <span>{translations.total}</span>
                           <span>${subtotal.toFixed(2)}</span>
                         </div>
@@ -289,14 +289,14 @@ const Checkout = () => {
                     <button
                       type="button"
                       onClick={() => setStep(step - 1)}
-                      className="px-6 py-2 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+                      className="px-6 py-2 text-gray-600 hover:text-gray-900"
                     >
                       {translations.backToCart}
                     </button>
                   )}
                   <button
                     type="submit"
-                    className="ml-auto bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center"
+                    className="ml-auto bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 flex items-center"
                   >
                     {step === 3 ? translations.placeOrder : translations.next}
                     <ArrowRight className={`ml-2 w-4 h-4 ${language === 'ar' ? 'rotate-180' : ''}`} />
@@ -312,9 +312,9 @@ const Checkout = () => {
               initial="hidden"
               animate="visible"
               variants={fadeIn}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6"
+              className="bg-white rounded-xl shadow-md p-6"
             >
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">
                 {translations.orderSummary}
               </h3>
               <div className="space-y-4">
@@ -327,29 +327,29 @@ const Checkout = () => {
                         className="w-12 h-12 object-cover rounded-lg"
                       />
                       <div className="ml-3">
-                        <h4 className="text-sm font-medium text-gray-900 dark:text-white">
+                        <h4 className="text-sm font-medium text-gray-900">
                           {item.name}
                         </h4>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">
+                        <p className="text-sm text-gray-500">
                           {translations.quantity}: {item.quantity}
                         </p>
                       </div>
                     </div>
-                    <span className="text-sm font-medium text-gray-900 dark:text-white">
+                    <span className="text-sm font-medium text-gray-900">
                       ${(item.price * item.quantity).toFixed(2)}
                     </span>
                   </div>
                 ))}
-                <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
-                  <div className="flex justify-between text-sm text-gray-600 dark:text-gray-300">
+                <div className="border-t border-gray-200 pt-4">
+                  <div className="flex justify-between text-sm text-gray-600">
                     <span>{translations.subtotal}</span>
                     <span>${subtotal.toFixed(2)}</span>
                   </div>
-                  <div className="flex justify-between text-sm text-gray-600 dark:text-gray-300 mt-2">
+                  <div className="flex justify-between text-sm text-gray-600 mt-2">
                     <span>{translations.shipping}</span>
                     <span>{translations.free}</span>
                   </div>
-                  <div className="flex justify-between text-base font-semibold text-gray-900 dark:text-white mt-2">
+                  <div className="flex justify-between text-base font-semibold text-gray-900 mt-2">
                     <span>{translations.total}</span>
                     <span>${subtotal.toFixed(2)}</span>
                   </div>

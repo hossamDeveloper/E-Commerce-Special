@@ -282,17 +282,17 @@ const Products = memo(() => {
         <div className="mb-8 pt-10">
           <Link 
             to="/" 
-            className="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 mb-4 transition-colors"
+            className="inline-flex items-center gap-2 text-blue-600  hover:text-blue-700 mb-4 transition-colors"
           >
             <ArrowLeft className={`w-5 h-5 ${language === 'ar' ? 'transform rotate-180' : ''}`} />
             {translations.back}
           </Link>
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
             <div className="flex-1">
-              <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
+              <h1 className="text-3xl font-bold text-gray-800  mb-2">
                 {translations.products.title}
               </h1>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-gray-600 ">
                 {translations.products.subtitle}
               </p>
             </div>
@@ -303,7 +303,7 @@ const Products = memo(() => {
         <div className="mb-8 space-y-6">
           {/* Search Bar */}
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500" size={20} />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 " size={20} />
             <input
               type="text"
               placeholder={translations.searchProducts}
@@ -346,7 +346,7 @@ const Products = memo(() => {
                 <select
                   value={sortOption}
                   onChange={(e) => setSortOption(e.target.value)}
-                  className="bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="bg-white :bg-gray-800 border border-gray-300  rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
                   <option value="default">{translations.products.sort.default}</option>
                   <option value="price-low-high">{translations.products.sort.priceLowHigh}</option>
@@ -372,9 +372,9 @@ const Products = memo(() => {
               <button
                 onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
                 disabled={currentPage === 1}
-                className="p-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 disabled:opacity-50"
+                className="p-2 rounded-lg bg-white border border-gray-300 disabled:opacity-50"
               >
-                <ChevronLeft className="w-5 h-5" />
+                <ChevronLeft className={`w-5 h-5 ${language === 'ar' ? 'transform rotate-180' : ''}`} />
               </button>
               {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => {
                 // Show first page, last page, current page, and 2 pages around current page
@@ -390,7 +390,7 @@ const Products = memo(() => {
                       className={`px-4 py-2 rounded-lg ${
                         currentPage === page
                           ? "bg-blue-600 text-white"
-                          : "bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700"
+                          : "bg-white border border-gray-300"
                       }`}
                     >
                       {page}
@@ -410,9 +410,9 @@ const Products = memo(() => {
               <button
                 onClick={() => setCurrentPage((prev) => Math.min(totalPages, prev + 1))}
                 disabled={currentPage === totalPages}
-                className="p-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 disabled:opacity-50"
+                className="p-2 rounded-lg bg-white border border-gray-300 disabled:opacity-50"
               >
-                <ChevronRight className="w-5 h-5" />
+                <ChevronRight className={`w-5 h-5 ${language === 'ar' ? 'transform rotate-180' : ''}`} />
               </button>
             </div>
           </div>

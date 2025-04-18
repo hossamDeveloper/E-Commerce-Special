@@ -56,28 +56,28 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center gap-8">
             <Link
               to="/"
-              className="text-gray-700 hover:text-blue-600"
+              className="text-gray-700 hover:text-blue-600 transition-colors px-3 py-2"
             >
               {translations.home}
             </Link>
             <Link
               to="/products"
-              className="text-gray-700 hover:text-blue-600"
+              className="text-gray-700 hover:text-blue-600 transition-colors px-3 py-2"
             >
               {translations.products.title}
             </Link>
             <Link
               to="/about"
-              className="text-gray-700 hover:text-blue-600"
+              className="text-gray-700 hover:text-blue-600 transition-colors px-3 py-2"
             >
               {translations.about}
             </Link>
             <Link
               to="/contact"
-              className="text-gray-700 hover:text-blue-600"
+              className="text-gray-700 hover:text-blue-600 transition-colors px-3 py-2"
             >
               {translations.contact}
             </Link>
